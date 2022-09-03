@@ -192,7 +192,9 @@ bool PCF8574::begin(){
 #ifdef ARDUINO_ARCH_STM32
 		_wire->begin((uint32_t)_sda, (uint32_t)_scl);
 #else
-		_wire->begin((int)_sda, (int)_scl);
+		_wire->setSCL(_scl);
+		_wire->setSDA(_sda);
+		_wire->begin();
 #endif
 	#else
 	//			Default pin for AVR some problem on software emulation
