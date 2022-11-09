@@ -191,6 +191,8 @@ bool PCF8574::begin(){
 //		_wire->begin(_sda, _scl);
 #ifdef ARDUINO_ARCH_STM32
 		_wire->begin((uint32_t)_sda, (uint32_t)_scl);
+#elif defined(RASPBERRYPI_PICO)
+		_wire->begin();
 #else
 		_wire->setSCL(_scl);
 		_wire->setSDA(_sda);
