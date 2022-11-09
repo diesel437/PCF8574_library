@@ -114,7 +114,7 @@ public:
 	PCF8574(uint8_t address, int sda, int scl, uint8_t interruptPin,  void (*interruptFunction)());
 #endif
 
-#if defined(ESP32) || defined(ARDUINO_ARCH_SAMD)
+#if defined(ESP32) || defined(ARDUINO_ARCH_SAMD) || defined(RASPBERRYPI_PICO)
 	///// changes for second i2c bus
 	PCF8574(TwoWire *pWire, uint8_t address);
 	PCF8574(TwoWire *pWire, uint8_t address, uint8_t interruptPin,  void (*interruptFunction)() );

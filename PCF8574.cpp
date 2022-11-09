@@ -90,7 +90,7 @@ PCF8574::PCF8574(uint8_t address, uint8_t interruptPin,  void (*interruptFunctio
 	};
 #endif
 
-#if defined(ESP32) || defined(ARDUINO_ARCH_SAMD)
+#if defined(ESP32) || defined(ARDUINO_ARCH_SAMD) || defined(RASPBERRYPI_PICO)
 	/**
 	 * Constructor
 	 * @param address: i2c address
